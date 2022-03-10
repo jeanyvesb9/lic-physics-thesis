@@ -17,7 +17,7 @@ This repository contains the LaTeX code, tables and figures for my Physics Licen
 
 ### Requirements:
 
-Any up-to-date LaTeX distribution with scientific-oriented packages, like TeXLive, MacTeX or MiKTeX. It can be opened in Overleaf, but only with a premium account due to the <img src="https://render.githubusercontent.com/render/math?math={\sim 100s}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\sim 100s}#gh-dark-mode-only"> (local) compile time.
+Any up-to-date LaTeX distribution with scientific-oriented packages, like TeXLive, MacTeX or MiKTeX. It can be opened in Overleaf, but only with a premium account due to the ~100s (local) compile time.
 
 ### Usage
 
