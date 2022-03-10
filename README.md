@@ -1,10 +1,10 @@
-# Search for new physics through the production of low-mass scalar resonances in ![formula](https://render.githubusercontent.com/render/math?math=pp) collisions at the LHC with the ATLAS detector
+# Search for new physics through the production of low-mass scalar resonances in *pp* collisions at the LHC with the ATLAS detector
 
-**Original title:** "_Búsqueda de nueva física a través de la producción de resonancias escalares de baja masa en colisiones pp del LHC con el detector ATLAS_"
+**Original title:** "*Búsqueda de nueva física a través de la producción de resonancias escalares de baja masa en colisiones pp del LHC con el detector ATLAS*"
 
 ### Abstract
 
-> Under the validity of certain BSM theories, like models involving Axion-Like particles, during a proton-proton collision at the LHC, a low-mass pseudoscalar resonance ![formula](https://render.githubusercontent.com/render/math?math=X) can be produced, coupling mainly with third-generation SM particles. These resonances could be detected by ATLAS, produced in association with a pair of top and anti-top quarks, and decaying to a pair of tau leptons, considered to decay hadronically ![formula](https://render.githubusercontent.com/render/math?math=(t\bar{t}(X%20\to%20\tau_{\text{had}}%20\tau_{\text{had}}))). The ![formula](https://render.githubusercontent.com/render/math?math=X%20\to%20\tau\tau) decay channel presents technical difficulties in the range of masses between 20 and 60 GeV since the individual tau leptons can't be resolved in the detector due to a low angular separation. The main challenges in this experimental search are the reconstruction and characterization of the ![formula](https://render.githubusercontent.com/render/math?math=X) particle's boosted decays for their proper identification, and the estimation of the SM background events that could contaminate the New Physics signal. With these objectives, in this thesis, we will define control and validation regions for the dominant ![formula](https://render.githubusercontent.com/render/math?math=t\bar{t}) background, estimating the normalization factors by comparing the MC simulations and 2017 data recorded by ATLAS.
+> Under the validity of certain BSM theories, like models involving Axion-Like particles, during a proton-proton collision at the LHC, a low-mass pseudoscalar resonance <img src="https://render.githubusercontent.com/render/math?math={X}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}X}#gh-dark-mode-only"> can be produced, coupling mainly with third-generation SM particles. These resonances could be detected by ATLAS, produced in association with a pair of top and anti-top quarks, and decaying to a pair of tau leptons, considered to decay hadronically <img src="https://render.githubusercontent.com/render/math?math={(t\bar{t}(X \to \tau_{\text{had}} \tau_{\text{had}}))}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}(t\bar{t}(X \to \tau_{\text{had}} \tau_{\text{had}}))}#gh-dark-mode-only">. The <img src="https://render.githubusercontent.com/render/math?math={X \to \tau_{\text{had}} \tau_{\text{had}}}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}X \to \tau_{\text{had}} \tau_{\text{had}}}#gh-dark-mode-only"> decay channel presents technical difficulties in the range of masses between 20 and 60 GeV since the individual tau leptons can't be resolved in the detector due to a low angular separation. The main challenges in this experimental search are the reconstruction and characterization of the <img src="https://render.githubusercontent.com/render/math?math={X}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}X}#gh-dark-mode-only"> particle's boosted decays for their proper identification, and the estimation of the SM background events that could contaminate the New Physics signal. With these objectives, in this thesis, we will define control and validation regions for the dominant <img src="https://render.githubusercontent.com/render/math?math={t\bar{t}}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}t\bar{t}}#gh-dark-mode-only"> background, estimating the normalization factors by comparing the MC simulations and 2017 data recorded by ATLAS.
 
 
 
@@ -13,11 +13,11 @@
 
 ## About this project
 
-This repository contains the ![formula](https://render.githubusercontent.com/render/math?math=\LaTeX) code, tables and figures for my Physics Licentiate thesis (equivalent to an M.Sc.) in experimental High Energy Physics at the National University of La Plata (UNLP). All the presented work is part of an ongoing analysis in the ATLAS experiment.
+This repository contains the LaTeX code, tables and figures for my Physics Licentiate thesis (equivalent to an M.Sc.) in experimental High Energy Physics at the National University of La Plata (UNLP). All the presented work is part of an ongoing analysis in the ATLAS experiment.
 
 ### Requirements:
 
-Any up-to-date ![formula](https://render.githubusercontent.com/render/math?math=\LaTeX) distribution with scientific-oriented packages, like TeXLive, MacTeX or MiKTeX. It can be opened in Overleaf, but only with a premium account due to the ![formula](https://render.githubusercontent.com/render/math?math=\sim%20100s) (local) compile time.
+Any up-to-date LaTeX distribution with scientific-oriented packages, like TeXLive, MacTeX or MiKTeX. It can be opened in Overleaf, but only with a premium account due to the ~100s (local) compile time.
 
 ### Usage
 
@@ -33,4 +33,4 @@ I began writting the thesis with the `tufte-latex` document-class, but quickly f
 
 The current version contains a lot of code inspired in the original `tufte-latex`, and some `classicthesis` code, albeit with many changes. Bibliography management is based Weimer's custom `\cite` commands, although modified to be able to use vertical offsets.
 
-You're free to re-use the thesis' ![formula](https://render.githubusercontent.com/render/math?math=\LaTeX) template in your own dissertations. I will release a documented and cleaned-up version to CTAN in the future.
+You're free to re-use the thesis' LaTeX template in your own dissertations. I will release a documented and cleaned-up version to CTAN in the future.
