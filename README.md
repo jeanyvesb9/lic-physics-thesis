@@ -13,11 +13,11 @@
 
 ## About this project
 
-This repository contains the <img src="https://render.githubusercontent.com/render/math?math={\LaTeX}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\LaTeX}#gh-dark-mode-only"> code, tables and figures for my Physics Licentiate thesis (equivalent to an M.Sc.) in experimental High Energy Physics at the National University of La Plata (UNLP). All the presented work is part of an ongoing analysis in the ATLAS experiment.
+This repository contains the LaTeX code, tables and figures for my Physics Licentiate thesis (equivalent to an M.Sc.) in experimental High Energy Physics at the National University of La Plata (UNLP). All the presented work is part of an ongoing analysis in the ATLAS experiment.
 
 ### Requirements:
 
-Any up-to-date <img src="https://render.githubusercontent.com/render/math?math={\LaTeX}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\LaTeX}#gh-dark-mode-only"> distribution with scientific-oriented packages, like TeXLive, MacTeX or MiKTeX. It can be opened in Overleaf, but only with a premium account due to the <img src="https://render.githubusercontent.com/render/math?math={\sim 100s}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\sim 100s}#gh-dark-mode-only"> (local) compile time.
+Any up-to-date LaTeX distribution with scientific-oriented packages, like TeXLive, MacTeX or MiKTeX. It can be opened in Overleaf, but only with a premium account due to the <img src="https://render.githubusercontent.com/render/math?math={\sim 100s}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\sim 100s}#gh-dark-mode-only"> (local) compile time.
 
 ### Usage
 
@@ -33,4 +33,4 @@ I began writting the thesis with the `tufte-latex` document-class, but quickly f
 
 The current version contains a lot of code inspired in the original `tufte-latex`, and some `classicthesis` code, albeit with many changes. Bibliography management is based Weimer's custom `\cite` commands, although modified to be able to use vertical offsets.
 
-You're free to re-use the thesis' <img src="https://render.githubusercontent.com/render/math?math={\LaTeX}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\LaTeX}#gh-dark-mode-only"> template in your own dissertations. I will release a documented and cleaned-up version to CTAN in the future.
+You're free to re-use the thesis' LaTeX template in your own dissertations. I will release a documented and cleaned-up version to CTAN in the future.
