@@ -1,4 +1,4 @@
-# Search for new physics through the production of low-mass scalar resonances in ![formula](https://render.githubusercontent.com/render/math?math=pp) collisions at the LHC with the ATLAS detector
+# Search for new physics through the production of low-mass scalar resonances in <img src="https://render.githubusercontent.com/render/math?math={pp}#gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}pp}#gh-dark-mode-only"> collisions at the LHC with the ATLAS detector
 
 **Original title:** "_Búsqueda de nueva física a través de la producción de resonancias escalares de baja masa en colisiones pp del LHC con el detector ATLAS_"
 
