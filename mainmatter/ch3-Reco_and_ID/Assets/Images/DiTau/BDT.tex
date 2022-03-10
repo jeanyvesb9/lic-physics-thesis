@@ -1,0 +1,60 @@
+\definecolor{bkg_node}{cmyk}{0, 0.48, 0.25, 0}
+\definecolor{sig_node}{cmyk}{0.16, 0.07, 0, 0}
+\begin{tikzpicture}
+    \tikzset{
+        font=\sffamily,
+        every node/.style = {
+            draw=darkgray,
+            thin,
+            align=center,
+            inner sep=0pt,
+        },
+        grad/.style = {
+            shading=axis,
+            top color=sig_node,
+            bottom color=bkg_node,
+        },
+        arrow/.style = {
+            -{latex[scale=0.7]},
+            black,
+            thick,
+        },
+        midbox/.style = {
+            fill=white,
+            draw=Burgundy,
+            minimum height=4.1mm,
+            inner sep=0.7mm,
+            rectangle,
+            rounded corners=2,
+            font=\tiny,
+        },
+    }
+    \node[fill=Goldenrod, circle, minimum size=7mm] (root) at (0,0) {Raíz};
+    \node[below left=12mm and 11mm of root, shade, grad, circle, minimum size=7mm] (l1n1) {};
+    \node[below right=12mm and 11mm of root, shade, grad, circle, minimum size=7mm] (l1n2) {};
+    %
+    \node[below left=12mm and 2mm of l1n1, fill=bkg_node, circle, minimum size=7mm] (l2n1) {B};
+    \node[below right=12mm and 2mm of l1n1, fill=sig_node, circle, minimum size=7mm] (l2n2) {S};
+    \node[below left=12mm and 2mm of l1n2, shade, grad, circle, minimum size=7mm] (l2n3) {};
+    \node[below right=12mm and 2mm of l1n2, fill=sig_node, circle, minimum size=7mm] (l2n4) {S};
+    %
+    \node[below left=12mm and 2mm of l2n3, fill=bkg_node, circle, minimum size=7mm] (l3n1) {B};
+    \node[below right=12mm and 2mm of l2n3, fill=sig_node, circle, minimum size=7mm] (l3n2) {S};
+    %
+    \draw[arrow] ([shift={(-1mm, 0.1mm)}]root.south) -- (l1n1.north) node[midbox, pos=0.45] {$x_i < c_1$};
+    \draw[arrow] ([shift={(+1mm, 0.1mm)}]root.south) -- (l1n2.north) node[midbox, pos=0.45] {$x_i \geq c_1$};
+    %
+    \draw[arrow] ([shift={(-1mm, 0.1mm)}]l1n1.south) -- (l2n1.north);
+    \node[midbox] at ($(l1n1)!0.45!(l2n1) + (-3mm, 0mm)$) {$x_j < c_2$};
+    \draw[arrow] ([shift={(+1mm, 0.1mm)}]l1n1.south) -- (l2n2.north);
+    \node[midbox] at ($(l1n1)!0.45!(l2n2) + (+3mm, 0mm)$) {$x_j \geq c_2$};
+    \draw[arrow] ([shift={(-1mm, 0.1mm)}]l1n2.south) -- (l2n3.north);
+    \node[midbox] at ($(l1n2)!0.45!(l2n3) + (-3mm, 0mm)$) {$x_j < c_3$};
+    \draw[arrow] ([shift={(+1mm, 0.1mm)}]l1n2.south) -- (l2n4.north);
+    \node[midbox] at ($(l1n2)!0.45!(l2n4) + (+3mm, 0mm)$) {$x_j \geq c_3$};
+    %
+    \draw[arrow] ([shift={(-1mm, 0.1mm)}]l2n3.south) -- (l3n1.north);
+    \node[midbox] at ($(l2n3)!0.45!(l3n1) + (-3mm, 0mm)$) {$x_k < c_4$};
+    \draw[arrow] ([shift={(+1mm, 0.1mm)}]l2n3.south) -- (l3n2.north);
+    \node[midbox] at ($(l2n3)!0.45!(l3n2) + (+3mm, 0mm)$) {$x_k \geq c_4$};
+\end{tikzpicture}

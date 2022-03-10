@@ -1,0 +1,40 @@
+\resizebox{0.99\linewidth}{!}{
+\begin{tikzpicture}
+    \begin{axis}[
+            axis y line = center,
+            axis x line = middle,
+            axis line style = {-{Latex[scale=2]}, very thin, darkgray},
+            ticks = none,
+            clip = false,
+            xmin = -2.2, xmax = 2.2,
+            ymin = -3, ymax = 15,
+        ]
+        \addplot[domain=-2:2, smooth, samples=100, thick] {-5*x^2 + 2*x^4};
+        %
+        \node at (axis cs:0.5, 15) {\large$V(\abs{\Phi})$};
+        \node at (axis cs:2, -1.5) {\large$\Re(\Phi)$};
+        \draw[-{Latex[scale=2]}, very thin] (axis cs:0, 0) -- (axis cs:-1.5, -6);
+        \node at (axis cs:-0.8, -6) {\large$\Im(\Phi)$};
+        %
+        \coordinate (el_0_c) at (axis cs:0, -3.125);
+        \coordinate (el_0_e) at (axis cs:1.11801, -3.125);
+        \coordinate (el_1_c) at (axis cs:0, 4);
+        \coordinate (el_1_e) at (axis cs:1.77129, 4);
+        \coordinate (el_2_c) at (axis cs:0, 9);
+        \coordinate (el_2_e) at (axis cs:1.92671, 9);
+        %
+        \coordinate (el_0_e_axis) at (axis cs:1.11801, 0);
+    \end{axis}
+    \newlength{\rx}
+    \pgfextractx{\rx}{\pgfpointdiff{\pgfpointanchor{el_0_e}{center}}{\pgfpointanchor{el_0_c}{center}}}%
+    \draw[dashed, darkgray] (el_0_c) ellipse [x radius = \rx, y radius = 3mm];
+    \pgfextractx{\rx}{\pgfpointdiff{\pgfpointanchor{el_1_e}{center}}{\pgfpointanchor{el_1_c}{center}}}%
+    \draw[dashed, darkgray] (el_1_c) ellipse [x radius = \rx, y radius = 3mm];
+    \pgfextractx{\rx}{\pgfpointdiff{\pgfpointanchor{el_2_e}{center}}{\pgfpointanchor{el_2_c}{center}}}%
+    \draw[dashed, darkgray] (el_2_c) ellipse [x radius = \rx, y radius = 3mm];
+    %
+    \draw[dashed, darkgray] (el_0_e) -- (el_0_e_axis);
+    \node[circle, fill=Burgundy, inner sep=1mm] at (el_0_e) {};
+    \node at ([shift={(-1mm, 4.5mm)}] el_0_e_axis) {\normalsize$v = \sqrt{-\frac{\mu^2}{\lambda}}$};
+\end{tikzpicture}
+}

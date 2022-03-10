@@ -1,0 +1,70 @@
+\newcommand{\ttXdiagram}[1][large]{
+    \ifthenelse{\equal{#1}{large}}{%
+        \let\ttXfontsize\Large%
+    }{%
+        \let\ttXfontsize\normalsize%
+    }%
+    \begin{tikzpicture}[font=\ttXfontsize]
+        \begin{feynman}
+            \vertex (g1) at (0,0) {$g$};
+            \vertex[right=30mm of g1] (g1_t);
+            \vertex[above right=15mm and 43mm of g1_t] (W1_end);
+            \vertex[above right=5mm and 5mm of W1_end] (l) {$\ell$};
+            \vertex[below right=5mm and 5mm of W1_end] (nu) {$\bar{\nu}_\ell$};
+            \vertex (W1_start) at ($(g1_t)!0.77!(W1_end) + (0mm, -1mm)$);
+            \vertex[below right=5mm and 5mm of W1_start] (b1) {$b$};
+            %
+            \vertex[below=20mm of g1] (g2) {$g$};
+            \vertex[right=30mm of g2] (g2_t);
+            \vertex[below right=15mm and 43mm of g2_t] (W2_end);
+            \vertex[above right=5mm and 5mm of W2_end] (q1) {$q$};
+            \vertex[below right=5mm and 5mm of W2_end] (q2) {$\bar{q}$};
+            \vertex (W2_start) at ($(g2_t)!0.77!(W2_end) + (0mm, +1mm)$);
+            \vertex[above right=5mm and 5mm of W2_start] (b2) {$\bar{b}$};
+            %
+            \vertex (X_start) at ($(g1_t)!0.5!(g2_t)$);
+            \vertex[right=12mm of X_start] (X_end);
+            \vertex[above right=2.5mm and 18mm of X_end] (tau1) {$\tau$};
+            \vertex[below right=2.5mm and 18mm of X_end] (tau2) {$\tau$};
+            %
+            \diagram*{
+            (g1) -- [gluon] (g1_t),
+            (g2) -- [gluon] (g2_t),
+            %
+            (b2) -- [fermion] (W2_start) -- [fermion, edge label={$\bar{t}$}] (g2_t) -- [fermion] (g1_t) -- [fermion, edge label={$t$}] (W1_start) -- [fermion] (b1),
+            %
+            (W1_start) -- [boson, edge label={$W^+$}] (W1_end),
+            (nu) -- [fermion] (W1_end) -- [fermion] (l),
+            %
+            (W2_start) -- [boson, edge label'={$W^-$}] (W2_end),
+            (q2) -- [fermion] (W2_end) -- [fermion] (q1),
+            %
+            (X_start) -- [scalar, edge label={$X$}] (X_end),
+            };
+        \end{feynman}
+        %
+        \tikzset{
+            borders/.style = { line width=0.5pt, draw=darkgray},
+            gradient/.style = {shading=axis, fill opacity=0.3},
+            redGrad/.style = {gradient, left color=Burgundy, right color=Burgundy!10},
+            blueGrad/.style = {gradient, left color=blue!60, right color=blue!10}
+        }
+        \node[shade, redGrad, borders, ellipse, minimum width=3.2mm, minimum height=6mm] (tau1_ellipse) at (tau1) {};
+        \shade[redGrad] (X_end) -- (tau1_ellipse.north) arc (90:270:1.6mm and 3mm) -- (X_end);
+        \draw[borders] ($(tau1_ellipse.north) + (-0.2mm, -0.1mm)$) -- (X_end) -- ($(tau1_ellipse.south) + (-0.15mm, 0.1mm)$);
+        %
+        \node[shade, redGrad, borders, ellipse, minimum width=3.4mm, minimum height=6mm] (tau2_ellipse) at (tau2) {};
+        \shade[redGrad] (X_end) -- (tau2_ellipse.north) arc (90:270:1.7mm and 3mm) -- (X_end);
+        \draw[borders] ($(tau2_ellipse.north) + (-0.15mm, -0.1mm)$) -- (X_end) -- ($(tau2_ellipse.south) + (-0.2mm, 0.1mm)$);
+        %
+        \node[shade, blueGrad, borders, ellipse, minimum width=6mm, minimum height=20mm] (ditau_ellipse) at ($(tau1)!0.5!(tau2)$) {};
+        \shade[blueGrad] (X_end) -- (ditau_ellipse.north) arc (90:270:3mm and 10mm) -- (X_end);
+        \draw[borders] ($(ditau_ellipse.north) + (-0.2mm, -0.1mm)$) -- (X_end) -- ($(ditau_ellipse.south) + (-0.2mm, 0.1mm)$);
+        %
+        \begin{feynman}
+            \diagram*{(tau2) -- [fermion] (X_end) -- [fermion] (tau1)};
+            \vertex (tau1_text) at (tau1) {$\tau$};
+            \vertex (tau2_text) at (tau2) {$\tau$};
+        \end{feynman}
+    \end{tikzpicture}
+}

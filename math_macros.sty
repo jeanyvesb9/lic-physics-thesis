@@ -1,0 +1,131 @@
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{amsfonts}
+\RequirePackage{amsthm}
+\RequirePackage{empheq}
+\RequirePackage{gensymb}
+\RequirePackage{diffcoeff}
+\RequirePackage{accents}   %Fucks up the amsmath \lim ???
+\RequirePackage{slashed}
+\RequirePackage{dsfont}
+\RequirePackage{bm}
+\RequirePackage{cancel}
+\RequirePackage{thmtools}
+\RequirePackage{thm-restate}
+
+\RequirePackage[per-mode=symbol, binary-units]{siunitx}[=v2] %Breaks \micro if running on v3 with T1 fonts
+\let\unit\relax % Due to the \qty collition between siunitx and units
+\let\qty\relax % Due to the \qty collition between siunitx and physics
+\RequirePackage{physics}
+\RequirePackage{tensor}
+%\RequirePackage{simplewick}
+
+%\RequirePackage{ytableau}
+%\ytableausetup{centertableaux}
+
+
+%% Allow for page-breaks in long equations and aligns
+\allowdisplaybreaks
+
+
+% --- MATH DEFINITIONS ---------------------------------------
+
+% --- Trig Functions ---
+\DeclareMathOperator{\sinc}{sinc}
+%\DeclareMathOperator{\sech}{sech}
+%\DeclareMathOperator{\csch}{csch}
+%\DeclareMathOperator{\arcsec}{arcsec}
+%\DeclareMathOperator{\arccot}{arccot}
+%\DeclareMathOperator{\arccsc}{arccsc}
+%\DeclareMathOperator{\arccosh}{arccosh}
+%\DeclareMathOperator{\arcsinh}{arcsinh}
+%\DeclareMathOperator{\arctanh}{arctanh}
+%\DeclareMathOperator{\arcsech}{arcsech}
+%\DeclareMathOperator{\arccsch}{arccsch}
+%\DeclareMathOperator{\arccoth}{arccoth}
+
+% --- Other Functions ---
+%\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+%\DeclareMathOperator{\Res}{Res}
+
+%\let\real\Re
+%\let\Re\relax
+%\DeclareMathOperator{\Re}{Re}
+%\let\imaginary\Im
+%\let\Im\relax
+%\DeclareMathOperator{\Im}{Im}
+
+\DeclareMathOperator{\weight}{wt}
+\DeclareMathOperator{\Poly}{Poly}
+
+\DeclareMathOperator{\Vol}{Vol}
+
+% --- Sets / Groups / Structures ---
+\newcommand{\realSet}{\mathbb{R}}
+\newcommand{\complexSet}{\mathbb{C}}
+
+% --- Useful macros ---
+\newcommand{\inv}[1]{\frac{1}{#1}}
+
+% --- Useful (re)definitions ---
+\renewcommand{\vb}[1]{\bm{#1}}
+%\newcommand{\vb}[1]{\bm{#1}}
+
+% --- Physics Definitions ---
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\Ham}{\mathcal{H}}
+
+%\renewcommand{\a}{\hat{a}}
+%\renewcommand{\b}{\hat{b}}
+%\renewcommand{\c}{\hat{c}}
+%\renewcommand{\a}[1]{\hat{a}_{#1}}
+%\renewcommand{\b}[1]{\hat{b}_{#1}}
+
+\newcommand{\x}{\vb{x}}
+\newcommand{\y}{\vb{y}}
+\newcommand{\z}{\vb{z}}
+\newcommand{\p}{\vb{p}}
+\newcommand{\q}{\vb{q}}
+\renewcommand{\k}{\vb{k}}
+\newcommand{\tx}{\tilde{x}}
+\newcommand{\E}{\vb{E}}
+\newcommand{\B}{\vb{B}}
+
+
+% --- Physics Text Shortcuts ---
+\newcommand{\oref}{$\mathcal{O}$ }
+\newcommand{\opref}{$\mathcal{O}'$ }
+\newcommand{\oppref}{$\mathcal{O}''$ }
+\newcommand{\ttau}{$\tau$ }
+\newcommand{\ttaus}{$\tau$s }
+\newcommand{\thad}{$\tau_{\text{had}}$ }
+\newcommand{\thads}{$\tau_{\text{had}}$s }
+
+
+
+
+% --- UNITS DEFINITIONS ---------------------------------------
+
+\DeclareSIUnit\clight{\text{\ensuremath{c}}}
+\DeclareSIUnit\keV{\kilo\electronvolt}
+\DeclareSIUnit\MeV{\mega\electronvolt}
+\DeclareSIUnit\GeV{\giga\electronvolt}
+\DeclareSIUnit\TeV{\tera\electronvolt}
+\DeclareSIUnit\keVpc{\keV\per\clight\squared}
+\DeclareSIUnit\MeVpc{\MeV\per\clight\squared}
+\DeclareSIUnit\GeVpc{\GeV\per\clight\squared}
+\DeclareSIUnit\TeVpc{\TeV\per\clight\squared}
+\DeclareSIUnit\atmosphere{\text{atm}}
+\DeclareSIUnit\barn{\text{b}}
+\DeclareSIUnit\fb{\femto\barn}
+\DeclareSIUnit\event{\text{evento}}
+\DeclareSIUnit\yr{\text{año}}
+\DeclareSIUnit\sample{Sa}
+\DeclareSIUnit\pixel{\text{píxeles}}
+\DeclareSIUnit\photon{\gamma}
+
+
+% --- To be able to place \eqref in captions...
+\MakeRobust{\eqref}

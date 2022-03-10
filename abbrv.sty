@@ -1,0 +1,37 @@
+% correct abbreviations http://stackoverflow.com/a/3285603
+\RequirePackage{expl3}
+
+\ExplSyntaxOn{}
+\newcommand\latinabbrev[1]{
+  \peek_meaning:NTF . {% Same as \@ifnextchar
+    #1\@}%
+  { \peek_catcode:NTF a {% Check whether next char has same catcode as \'a, i.e., is a letter
+      #1.\@ }%
+    {#1.\@}}}
+\ExplSyntaxOff{}
+
+\def\aka/{\latinabbrev{a.\,k.\,a}}
+\def\cf/{\latinabbrev{cf}}
+\def\Cf/{\latinabbrev{Cf}}
+\def\st/{\latinabbrev{s.\,t}}
+\def\St/{\latinabbrev{S.\,t}}
+\def\eg/{\latinabbrev{e.\,g}}
+\def\Eg/{\latinabbrev{E.\,g}}
+\def\etal/{\latinabbrev{\textit{et\,al}}}
+\def\etc/{\latinabbrev{etc}}
+\def\Etc/{\latinabbrev{Etc}}
+\def\ie/{\latinabbrev{i.\,e}}
+\def\Ie/{\latinabbrev{I.\,e}}
+\def\resp/{\latinabbrev{resp}}
+\def\Resp/{\latinabbrev{Resp}}
+
+\RequirePackage[nolist,nohyperlinks]{acronym}
+%\newcommand{\abbrv}[1]{%
+%    \csdef{#1}{\ac{##1}}%
+%    \csdef{#1l}{\acl{##1}}%
+%}
+\begin{acronym}
+\acro{ME}{Modelo Estándar}
+\acro{SM}{Standard Model}
+\acro{BSM}{Beyond the Standard Model}
+\end{acronym}

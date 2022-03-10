@@ -1,0 +1,34 @@
+\chapter{Two Higgs Doublet Model (2HDM)} \label{ap:ap1}
+
+Como su nombre lo indica, este modelo BSM añade un segundo doblete escalar $SU(2)_L$ al sector de Higgs del Modelo Estándar~\cite{Degrande2015a,Jurciukonis2019}, resultando en
+\[ \Lag_{H, \text{2HDM}} = (D^\mu \Phi_1)^\dagger (D_\mu \Phi_1) + (D^\mu \Phi_2)^\dagger (D_\mu \Phi_2) + V(\Phi_1, \Phi_2). \]
+Con una ruptura suave de la simetría discreta $\mathrm{Z}_2$ ($\Phi_1 \to \Phi_1$, $\Phi_2 \to -\Phi_2$)\sidenote{
+  La simetría $\mathrm{Z}_2$ se impone para suprimir las transiciones $\Phi_1 \leftrightarrow \Phi_2$. Estas transiciones pueden dar orígen a violaciones $CP$ en el sector electrodébil, y corrientes neutras con cambios de sabor (FCNC, \textit{Flavour Chaging Neutral Currents}.)
+}, el potencial de Higgs en el 2HDM se encuentra dado por
+\begin{align*}
+  V(\Phi_1, \Phi_2) &= \mu_1^2 \Phi_1^\dagger \Phi_2 + \mu_2^2 \Phi_2^\dagger \Phi_2 + (\mu_{12}^2 \Phi_1^\dagger \Phi_2 + \text{h.c.}) \\
+    &\quad + \lambda_1 (\Phi_1^\dagger \Phi_1)^2 + \lambda_2 (\Phi_2^\dagger \Phi_2)^2 \\
+    &\quad + \lambda_3 (\Phi_1^\dagger \Phi_1) (\Phi_2^\dagger \Phi_2) + \lambda_4 (\Phi_1^\dagger \Phi_2) (\Phi_2^\dagger \Phi_1) \\
+    &\quad + \lambda_5 \qty[ (\Phi_1^\dagger \Phi_2)^2 + \text{h.c.}] \\
+    &\quad + \Phi_1^\dagger \Phi_1 \qty[ \lambda_6 (\Phi_1^\dagger \Phi_2)^2 + \text{h.c.}] + \Phi_2^\dagger \Phi_2 \qty[ \lambda_7 (\Phi_1^\dagger \Phi_2)^2 + \text{h.c.}],
+\end{align*}
+con $\mu_{12}$, $\lambda_5$, $\lambda_6$ y $\lambda_7$ complejos, mientras que el resto de los parámetros resultan reales. El sector de Yukawa del 2HDM más general resulta una duplicación del sector de Yukawa original, permitiendo interacciones arbitrarias de los fermiones con ambos dobletes $\Phi_1$ y $\Phi_2$:
+\begin{align*}
+  \Lag_{Y, \text{2hDM}} &= -\sum_{i = 1}^3 Y^e_{i} \ \bar{l}_L^i \Phi_1 e_R^i -\sum_{i,j =1}^3 \qty[ Y_{ij}^d \ \bar{q}_L^i \Phi_1 d^j_R + Y_{ij}^u \ \bar{q}_L^i \tilde{\Phi}_1 u^j_R ] + \text{h.c.} \\
+    &\quad -\sum_{i = 1}^3 G^e_{i} \ \bar{l}_L^i \Phi_2 e_R^i -\sum_{i,j =1}^3 \qty[ G_{ij}^d \ \bar{q}_L^i \Phi_2 d^j_R + G_{ij}^u \ \bar{q}_L^i \tilde{\Phi}_2 u^j_R ] + \text{h.c.}.
+\end{align*}
+
+En la base de Higgs, donde solo $\Phi_1$ adquiere un vev $v$ no nulo, la teoría resulta definida por solo estos parámetros, y los anchos de decaimiento efectivos $\Gamma$ de los bosones.
+
+Suponiendo que no existe violación CP dura global, luego de la ruptura espontánea de la simetría electrodébil, este modelo contendrá cuatro bosones escalares: dos bosones neutros escalares \textit{CP-even}, que se suelen denominar $h_1$ y $h_2$, con $m_{h_1} < m_{h_2}$ por convención; un bosón neutro \textit{CP-odd} $h_3$, que identificaremos en nuestro caso con la partícula pseudoescalar $X$; y un bosón escalar cargado $H^+$, de masa $m_{H^+}^2 = \mu_2 + \lambda_3 v^2/2$. Los autoestados de masa neutros se encuentran determinados por una combinación lineal de los modos originales ($h_i^0$) en la base de Higgs, introduciendo en este caso una mezcla entre los bosones $h_1^0$ y $h_2^0$ para obtener $h_1$ y $h_2$, por medio de la matriz
+\[
+    \begin{pmatrix} h_1 \\ h_2 \\ h_3 \end{pmatrix}
+    =
+    \begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} h^0_1 \\ h^0_2 \\ h^0_3 \end{pmatrix},
+\]
+con $\theta = 0.89569$.
+
+Como en este análisis solo resulta de interés la producción de un bosón escalar (el bosón de Higgs original), y un bosón pseudoescalar ($X$), se suprime la producción y acoplamiento de los dos bosones remanentes en el modelo fijando $m_{h_2} = m_{H^+} = \SI{1.25e10}{\GeV}$. Además, a partir de estudios fenomenológicos de la señal, se establece $\Gamma_{h_3} = \SI{1.801e-2}{\GeV}$. Los detalles de la producción de las simulaciones de Monte Carlo de los eventos de señal $t\bar{t}(X \to \tau\tau)$ se desarrollan en la \cref{sec:ch4:processing}.
+
+\cleardoublepage{}

@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+    [
+        double arrow/.style={double distance=1.7mm, -{Latex[length = 6mm, open]}, line width = 0.2mm, postaction={draw, double distance = 0.5mm, line width = 0.5mm, white, -, shorten >= 5mm}},
+    ]
+    \node[align=center, text=darkgray] (t) {\small\scshape Tasa de eventos \\ \small\scshape e información};
+    \node[align=center, minimum width=10mm, minimum height=10mm, right=6mm of t, fill=gray!10] (d1) {\small CALO \\ \small \& MS};
+    \node[align=center, minimum width=10mm, minimum height=10mm, right=4mm of d1, fill=gray!10] (d2) {\small ID};
+    \draw (d1.south west) -- (d1.south east) (d2.south west) -- (d2.south east);
+    %
+    \node[align=center, text=darkgray, below=5mm of t] (p1) {\normalsize \SI{40}{\mega\hertz} \\ \footnotesize $[ \ \mathcal{O}(\SI{100}{PB/s}) \ ]$};
+    \node[align=center, text=darkgray, below=25mm of p1] (p2) {\normalsize \SI{100}{\kilo\hertz} \\ \footnotesize $[ \ \sim \SI{100}{GB/s} \ ]$};
+    \node[align=center, text=darkgray, below=50mm of p2] (p3) {\normalsize \SI{1.5}{\kilo\hertz} \\ \footnotesize $[ \ \sim \SI{1.5}{GB/s} \ ]$};
+    \draw[->, darkgray, shorten >= 2mm, shorten <= 2mm] (p1) edge (p2) (p2) edge (p3);
+    %
+    \node[draw, fit={(p2.north-|d1.west) (p2.south-|d2.east)}, label=center:\small{Lectura}, fill=gray!10] (lectura) {};
+    \node[draw, fit={(p3.north-|d1.west) (p3.south-|d2.east)}, label={[align=center]center:\small Almacenamiento \\ \small permanente}, fill=gray!10] (almacenamiento) {};
+    %
+    \draw[->, > = latex', thick] (d1) to (d1.south |- lectura.north);
+    \draw[->, > = latex', thick] (d2) to (d2.south |- lectura.north);
+    \draw[double arrow] (lectura) to (almacenamiento);
+    %
+    \node[draw, align=center, minimum width=8mm, minimum height=8mm, below left=20mm and 1mm of d1, color = Burgundy, fill = lightgray] (L1) {L1};
+    \node[draw, minimum height = 8mm, minimum width = 8mm, preaction={fill = white}, pattern = north west lines, pattern color = lightgray, below = 18mm of lectura] (switch) {};
+    \node[draw, fit={([shift={(1mm, -1mm)}]L1.west |- switch.north) ([shift={(-1mm, 1mm)}]switch.west |- switch.south)}, color = Burgundy, fill = lightgray] (HLT) {};
+    \node[right = 2.3mm of HLT.west, color = Burgundy] (HLT_label) {HLT};
+    %
+    \draw[->, > = latex'] (d1.south |- L1.east) to (L1.east |- L1.east);
+    \draw[->, > = latex', color = Burgundy] (L1.south) to (L1.south |- HLT.north);
+    \draw[->, > = latex', color = Burgundy] (L1.south |- lectura.west) to (lectura.west);
+    \draw[->, > = latex'] ([shift={(2mm, 0mm)}]lectura.west |- lectura.south) to ([shift={(2mm, 0mm)}]lectura.west |- HLT.north);
+    \draw[->, > = latex', color = Burgundy] ([shift={(-3mm, 0mm)}]HLT.east) to ([shift={(3mm, 0mm)}]HLT.east);
+\end{tikzpicture}

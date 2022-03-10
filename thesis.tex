@@ -1,0 +1,132 @@
+\documentclass{thesis-class}
+
+% --- SILENCE USELESS WARNINGS
+\usepackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
+\WarningFilter*{latex}{Marginpar on page \thepage\space moved}
+
+% Remove the "Underfull (...)" warnings from the margin floats:
+\hbadness=10000
+% Hide "Overfull \hbox" warnings up to:
+%\hfuzz=10pt
+
+% --- Smart include package
+\usepackage{import}
+
+% --- Tikz setup
+\usepackage{tikz, pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{external}
+%\tikzexternalize[prefix=tikz_cache]
+\usetikzlibrary{positioning, calc, fit}
+\usetikzlibrary{angles, arrows, arrows.meta, quotes, patterns, patterns.meta, decorations.markings, fadings}
+\usetikzlibrary{babel}
+\usepackage[com pat=1.1.0]{tikz-feynman}
+
+\usepackage{nameref}
+\hypersetup{colorlinks}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{booktabs} % For nicely typeset tabular material
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+\usepackage{textcomp}
+\usepackage{longtable}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{rotating}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{hyphenat}
+\usepackage{url}
+\usepackage{fancyvrb}
+\usepackage{xspace} % Prints a trailing space in a smart way
+
+% --- For sideways tables and images
+\usepackage{floatpag}
+\rotfloatpagestyle{fullwidth}
+
+% This fixes sidewaystable and sidewaysfigure environments page centering
+\setlength{\rotFPtop}{0pt plus 1fil}% <- add this line after loading rotating
+\setlength{\rotFPbot}{0pt plus 1fil}% <- maybe its better to add this line too
+
+
+% --- Math macros
+\input{math_macros.sty}
+
+% --- IMPORT BIBLIOGRAPHY
+\bibliography{references}
+
+
+% --- METADATA
+\title{Búsqueda de nueva física a través de la producción de resonancias escalares de baja masa en colisiones pp del LHC con el detector ATLAS}
+\author{Jean Yves Beaucamp}
+\date{\today}
+
+% --- Generates the index
+\usepackage{makeidx}
+\makeindex
+
+% --- COMMON ASSETS SETUP -----------------------------
+
+% - Import custom-font-size ttX diagram
+\input{common/Assets/Images/ttX_diagram.tex}
+
+
+
+\begin{document}
+\frontmatter{}
+%
+\includefrom{frontmatter/Titlepage}{titlepage}
+%
+\includefrom{frontmatter/Acknowledgements}{acknowledgements}
+%
+\includefrom{frontmatter/Abstract}{abstract}
+%
+\tableofcontents*\addcontentsline{toc}{chapter}{Índice General}
+\cleardoublepage{}
+%
+%\listoffigures*\addcontentsline{toc}{chapter}{Índice de Figuras}
+%\clearpage{}
+%
+%\listoftables*\addcontentsline{toc}{chapter}{Índice de Tablas}
+%\clearpage{}
+%
+%
+\mainmatter{}
+%
+\includefrom{mainmatter/nnch-Introduction}{chapter}
+\includefrom{mainmatter/ch1-Standard_Model}{chapter}
+\includefrom{mainmatter/ch2-LHC_and_ATLAS}{chapter}
+\includefrom{mainmatter/ch3-Reco_and_ID}{chapter}
+\includefrom{mainmatter/ch4-Analysis_Strategy}{chapter}
+\includefrom{mainmatter/ch5-CR_ttbar}{chapter}
+\includefrom{mainmatter/ch6-VRs}{chapter}
+\includefrom{mainmatter/nnch-Conclusion}{chapter}
+%
+% Bibliography
+\nocite{*}
+\begin{fullwidth}
+\begingroup
+\let\clearpage\relax
+\printbibliography{}
+\endgroup
+\end{fullwidth}
+\cleardoublepage{}
+%
+\appendix{}
+\includefrom{mainmatter/ap1-2HDM}{chapter}
+%
+% Add 2 blank pages (a blank sheet) at the end
+\afterpage{\blankpage\cleardoublepage{}}
+%
+\end{document}

@@ -1,0 +1,32 @@
+\begin{tikzpicture}[font=\Large]
+    \begin{feynman}
+        \vertex (g1) at (0,0) {$g$};
+        \vertex[right=30mm of g1] (g1_t);
+        \vertex[above right=15mm and 43mm of g1_t] (W1_end);
+        \vertex[above right=5mm and 5mm of W1_end] (l) {$\ell$};
+        \vertex[below right=5mm and 5mm of W1_end] (nu) {$\bar{\nu}_\ell$};
+        \vertex (W1_start) at ($(g1_t)!0.77!(W1_end) + (0mm, -1mm)$);
+        \vertex[below right=5mm and 5mm of W1_start] (b1) {$b$};
+        %
+        \vertex[below=20mm of g1] (g2) {$g$};
+        \vertex[right=30mm of g2] (g2_t);
+        \vertex[below right=15mm and 43mm of g2_t] (W2_end);
+        \vertex[above right=5mm and 5mm of W2_end] (q1) {$q$};
+        \vertex[below right=5mm and 5mm of W2_end] (q2) {$\bar{q}$};
+        \vertex (W2_start) at ($(g2_t)!0.77!(W2_end) + (0mm, +1mm)$);
+        \vertex[above right=5mm and 5mm of W2_start] (b2) {$\bar{b}$};
+        %
+        \diagram*{
+        (g1) -- [gluon] (g1_t),
+        (g2) -- [gluon] (g2_t),
+        %
+        (b2) -- [fermion] (W2_start) -- [fermion, edge label={$\bar{t}$}] (g2_t) -- [fermion] (g1_t) -- [fermion, edge label={$t$}] (W1_start) -- [fermion] (b1),
+        %
+        (W1_start) -- [boson, edge label={$W^+$}] (W1_end),
+        (nu) -- [fermion] (W1_end) -- [fermion] (l),
+        %
+        (W2_start) -- [boson, edge label'={$W^-$}] (W2_end),
+        (q2) -- [fermion] (W2_end) -- [fermion] (q1),
+        };
+    \end{feynman}
+\end{tikzpicture}

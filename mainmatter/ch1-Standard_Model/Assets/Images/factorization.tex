@@ -1,0 +1,66 @@
+\begin{tikzpicture}
+    \coordinate (a1_i) at (0mm,0mm);
+    \coordinate[below=2mm of a1_i] (a2_i);
+    \coordinate[below=2mm of a2_i] (a3_i);
+    %
+    \coordinate[right=22mm of a1_i] (a1_m);
+    \coordinate[right=22mm of a2_i] (a2_m);
+    \coordinate[right=22mm of a3_i] (a3_m);
+    %
+    \coordinate[above right=7mm and 20mm of a1_m] (a1_e);
+    \coordinate[above right=7mm and 20mm of a2_m] (a2_e);
+    %
+    \coordinate[below=14mm of a3_i] (b1_i);
+    \coordinate[below=2mm of b1_i] (b2_i);
+    \coordinate[below=2mm of b2_i] (b3_i);
+    %
+    \coordinate[right=22mm of b1_i] (b1_m);
+    \coordinate[right=22mm of b2_i] (b2_m);
+    \coordinate[right=22mm of b3_i] (b3_m);
+    %
+    \coordinate[below right=7mm and 20mm of b2_m] (b2_e);
+    \coordinate[below right=7mm and 20mm of b3_m] (b3_e);
+    %
+    \coordinate[below right=7mm and 10mm of a3_m] (middle);
+    %
+    \begin{scope}[thick, decoration={markings, mark=at position 0.4 with {\arrow{latex}}}]
+        \draw[postaction={decorate}] (a1_i) -- (a1_m);
+        \draw[postaction={decorate}] (a2_i) -- (a2_m);
+        \draw[postaction={decorate}] (a3_i) -- (a3_m);
+        %
+        \draw[postaction={decorate}] (b1_i) -- (b1_m);
+        \draw[postaction={decorate}] (b2_i) -- (b2_m);
+        \draw[postaction={decorate}] (b3_i) -- (b3_m);
+    \end{scope}
+    %
+    \begin{scope}[thick, decoration={markings, mark=at position 0.6 with {\arrow{latex}}}]
+        \draw[postaction={decorate}] (a1_m) -- (a1_e);
+        \draw[postaction={decorate}] (a2_m) -- (a2_e);
+        %
+        \draw[postaction={decorate}] (b2_m) -- (b2_e);
+        \draw[postaction={decorate}] (b3_m) -- (b3_e);
+    \end{scope}
+    %
+    \begin{scope}[thick, decoration={markings, mark=at position 0.8 with {\arrow{latex}}}]
+        \draw[postaction={decorate}] (a3_m) -- (middle);
+        \draw[postaction={decorate}] (b1_m) -- (middle);
+    \end{scope}
+    %
+    \node at ([shift={(2mm, 3mm)}]a1_i) {\large$A$};
+    \node at ([shift={(2mm, -3mm)}]b3_i) {\large$B$};
+    %
+    \coordinate[left=2mm of a2_m] (a_circle);
+    \filldraw[color=Burgundy, fill=white, thick] (a_circle) circle (7mm);
+    \node at (a_circle) {\large$f_{A/a_i}$};
+    \coordinate[left=2mm of b2_m] (b_circle);
+    \filldraw[color=Burgundy, fill=white, thick] (b_circle) circle (7mm);
+    \node at (b_circle) {\large$f_{B/b_i}$};
+    %
+    \node at ($(a3_m)!0.8!(middle) + (-0.5mm, 3mm)$) {$x_{a_i}$};
+    \node at ($(b1_m)!0.8!(middle) + (-0.5mm, -4mm)$) {$x_{b_j}$};
+    %
+    \node[draw, fit={([shift={(1mm, 2mm)}] middle) ([shift={(15mm, -2mm)}] middle)}, preaction={fill=white}, color=Burgundy, label={[align=center]center:\large$\hat{\sigma}_{a_i b_j \to X}$}] (sigma) {};
+    %
+    \draw [-{Implies[]}, double distance=0.6mm, thick] (sigma.east) -- ([shift={(8mm, 0mm)}] sigma.east);
+    \node at ([shift={(5.5mm, 4mm)}] sigma.east) {\large$X$};
+\end{tikzpicture}

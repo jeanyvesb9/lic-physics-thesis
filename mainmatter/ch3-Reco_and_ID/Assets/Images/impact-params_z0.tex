@@ -1,0 +1,23 @@
+\resizebox{0.98\linewidth}{!}{
+\begin{tikzpicture}[font=\large]
+    \begin{axis}[
+        scale only axis=true,
+        width=50mm,
+        height=47.5mm,
+        xmin=-0.2, xmax=0.7, 
+        ymin=-0.17, ymax=0.9,
+        axis lines=middle,
+        axis line style={-{Latex[round, scale=1.2]}, thick},
+        ticks=none,
+        clip=false,
+    ]
+    \addplot+[-{To[scale=1]}, mark=none, Burgundy, thick, domain=0.1:0.63, smooth, samples=100] {-0.1 + 1.5 * (x - 0.1)};
+    \draw[darkgray, dashed, thick] (axis cs:0.1, -0.15) -- (axis cs:0.1, 0.92);
+    %
+    \draw[dotted, densely dotted, thick] (axis cs:0, 0.4) -- (axis cs:0.1, 0.4) node[pos=0.5, above=0.05mm] {$z_0$};
+    %
+    \node at (axis cs:0.76, 0) {$z$};
+    \node at (axis cs:0,0.98) {$r$};
+    \end{axis}
+\end{tikzpicture}
+}
