@@ -1656,12 +1656,15 @@
 \RequirePackage[unicode, hyperfootnotes=false, hypertexnames=false]{hyperref}
 \hypersetup{%
     linktocpage,
-    %bookmarks,
     bookmarksdepth = section,
     colorlinks = true,
     linkcolor = Burgundy,
     urlcolor = Burgundy,
     citecolor = Burgundy,
+    %hidelinks,
+    %linkcolor = black,
+    %urlcolor = black,
+    %citecolor = black,
     pdfpagelayout = TwoPageLeft,
     pdfencoding = auto,
 }

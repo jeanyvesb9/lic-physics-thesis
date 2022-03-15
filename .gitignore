@@ -1,5 +1,6 @@
 # Build directory:
 build
+thesis.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
