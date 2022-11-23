@@ -15,6 +15,13 @@
 \RequirePackage{thm-restate}
 
 \RequirePackage[per-mode=symbol, binary-units]{siunitx}[=v2] %Breaks \micro if running on v3 with T1 fonts
+\sisetup{group-minimum-digits=4}
+\newcommand*{\numR}[2]{\num[round-precision=#2]{#1}}
+\newcommand*{\numRF}[2]{\num[round-mode=figures,round-precision=#2]{#1}}
+\newcommand*{\numRP}[2]{\num[round-mode=places, round-precision=#2]{#1}}
+\newcommand{\numpmerr}[3]{\ensuremath{^{\num[round-precision=#3]{#1}}_{\num[round-precision=#3]{#2}}}}
+\newcommand{\numpmRF}[3]{\ensuremath{^{\num[round-mode=figures,round-precision=#3]{#1}}_{\num[round-mode=figures,round-precision=#3]{#2}}}}
+\newcommand{\numpmRP}[3]{\ensuremath{^{\num[round-mode=places, round-precision=#3]{#1}}_{\num[round-mode=places, round-precision=#3]{#2}}}}
 \let\unit\relax % Due to the \qty collition between siunitx and units
 \let\qty\relax % Due to the \qty collition between siunitx and physics
 \RequirePackage{physics}

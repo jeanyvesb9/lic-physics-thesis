@@ -30,7 +30,7 @@ El diseño del LHC permite almacenar hasta 3564 bunches por anillo, aunque en la
 \[ \Lag = f_{rev} n_b \frac{N_1 N_2}{A} = f_{rev} n_b \frac{N_1 N_2 \gamma F}{4 \pi \epsilon_n \beta^*}, \]
 donde $N_i$ es el número de partículas en cada bunch y $A = 4\pi\epsilon_n \beta^* / \gamma F$ es la sección efectiva del haz, definida en términos de la emitancia transversal normalizada\sidenote{Equivalente a la dispersión transversal media de las partículas del haz en el espacio de coordenadas e impulsos. Para el cálculo de la luminosidad final, $\epsilon_n$ es determinada experimentalmente, midiendo los perfiles transversales de los haces~\cite{Trad:2019liy}.} $\epsilon_n$, la función amplitud en el punto de interacción\sidenote{Este parámetro se encuentra relacionado al poder de focalización de los cuadrupolos. Se obtiene mediante simulaciones numéricas de los campos magnéticos.} $\beta^*$, el factor de Lorentz $\gamma = 1/\sqrt{1-v^2/c^2}$, y un factor de reducción geométrico $F$ debido al ángulo de cruce de los haces en el punto de interacción~\cite{Lee2019}. La luminosidad puede ser entendida como la magnitud que indica la capacidad de un acelerador de producir un determinado número de interacciónes de un dado proceso en el que se esté interesado, resultando en una tasa de eventos instantánea
 \[ \dv{N}{t} = \sigma \Lag, \]
-suponiendo una sección eficaz $\sigma$ del proceso de interés. Integrando en el tiempo obtenemos el número total de eventos $N$ a medirse en un dado tiempo $t$, definiendo entonces la luminosidad integrada como
+suponiendo una sección eficaz $\sigma$ para el proceso de interés. Integrando en el tiempo obtenemos el número total de eventos $N$ a medirse en un dado tiempo $t$, definiendo entonces la luminosidad integrada como
 \[ L = \frac{N}{\sigma} = \int_0^t \Lag(t') \dd{t'}, \]
 expresada usualmente en unidades de $\si{\femto\barn^{-1}} = \SI{1e-39}{\centi\meter^{-2}}$. En el período de operación del LHC 2015-2018, conocido como \textit{Run 2}, se alcanzó una energía máxima de $\sqrt{s} = \SI{13}{\TeV}$ (correspondiente a \SI{6.5}{\TeV} por nucleón, con una velocidad de $0.99999999c$) y una luminosidad instantánea media de \SI{1.4e-5}{\femto\barn^{-1} \second^{-1}}. La \cref{fig:ch2:lhc_atlas_luminosity} representa la luminosidad integrada como función del tiempo de recolección de datos del LHC, y la luminosidad integrada de las colisiones medidas y procesadas por el experimento ATLAS, que será descrito en la siguiente sección.
 
@@ -99,12 +99,12 @@ La \cref{fig:ch2:pseudorapidity} contiene una comparación geométrica entre los
 \end{marginfigure}
 En física de altas energías, esta nueva variable es preferida sobre el ángulo polar $\theta$, ya que la multiplicidad de las partículas producidas resulta aproximadamente constante como función de $\eta$, y la diferencia de pseudorapidez entre dos partículas es invariante frente a boosts de Lorentz en la dirección del haz. Junto con el ángulo azimutal $\phi$, también invariante ante boosts en la dirección privilegiada, nos permite definir una medida de distancia angular entre partículas
 \[ \Delta R = \sqrt{\Delta\eta^2 + \Delta\phi^2}, \]
-que será de vital importancia en los próximos capítulos.
+que será de importancia fundamental en los próximos capítulos.
 
 Debido a que los protones inciden en la dirección longitudinal $z$, es razonable suponer que el momento transverso de los partones es aproximadamente nulo. El momento transverso total $p_T = \sqrt{p_x^2 + p_y^2}$ es conservado durante la colisión. Resulta útil definir también la energía transversa
 \[ E_T = \frac{E}{\cosh\eta}, \]
 donde $E$ es la energía total de la partícula. Si bien $E_T$ no es una cantidad conservada, para partículas muy energéticas de masa pequeña, la corrección es menor\sidenote[][-11em]{%
-Expandiendo en $m/p_T$, 
+Desarrollando en $m/p_T$, 
 \begin{align*} 
     \frac{E_T}{p_T} = \frac{E}{p} &= \sqrt{1 + \frac{m^2}{p^2}} \\
                                   &= \sqrt{2 + \sin^2(\theta) \frac{m^2}{p_T^2}} \\
@@ -115,7 +115,7 @@ Expandiendo en $m/p_T$,
 
 \subsection{Subsistemas}
 
-Procederemos a describir brevemente los subsistemas principales de ATLAS. Para una información más detallada, el lector puede dirigirse al informe técnico de la colaboración \cite{Aad2008}.
+Procederemos a describir brevemente los subsistemas principales de ATLAS. Para una información más detallada puede consultarse el informe técnico de la colaboración \cite{Aad2008}.
 
 \subsubsection{Sistema de Imanes}
 

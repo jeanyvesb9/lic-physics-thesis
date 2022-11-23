@@ -17,11 +17,11 @@ Como hemos discutido en los capítulos anteriores, en el presente análisis se u
 
 Para verificar las estimaciones de los fondos y las correcciones que el factor de normalización $\mu_{t\bar{t}}$ introduce en el fondo $t\bar{t}$, definiremos dos regiones de validación, VR1 y VR2, basadas en distintas extrapolaciones entre la CR y la SR respectivamente, aunque con un nuevo rango de $BDT$ de los objetos DiTau incluidos. Obtenemos así una evolución progresiva de los cortes de selección. Para minimizar la presencia de señal en este primer conjunto de VRs, se optó por solo utilizar el intervalo $-0.2 < BDT < 0.0$, más alejado de la SR, como podemos observar en la \cref{fig:ch6:BDTs}.
 
-Un resumen de las definiciones de las regiones VR1 y VR2 se encuentra en la \cref{tbl:ch5:definition}.
+Un resumen de las definiciones de las regiones VR1 y VR2 se encuentra en la \cref{tbl:ch6:VRs_definition}.
 
 \begin{table*}[b]
-    \small
-    \setlength{\tabcolsep}{1.2mm}
+    \small%
+    \setlength{\tabcolsep}{1.2mm}%
     \input{Assets/Tables/VRs_definition.tex}
     \caption{Definiciones de las regiones de validación VR1 y VR2. Los cortes se aplican en el orden enlistado en la tabla. Los cortes en $NJets$ y $NBJets$ se realizan luego del OR entre (B)Jets y DiTaus ($\Delta R(\text{DiTau}, \text{(B)Jet}) > 1$).}
     \label{tbl:ch6:VRs_definition}
@@ -38,20 +38,21 @@ Un resumen de las definiciones de las regiones VR1 y VR2 se encuentra en la \cre
 \end{figure}
 
 \begin{table}[t]
-    \small
+    \small%
+    \centering%
     \input{Assets/Tables/VRs_results.tex}
-    \caption{Número total de eventos y diferencias porcentuales ($\Delta$) entre eventos simulados del SM y los datos experimentales en las regiones de validación VR1 y VR2. Trabajo en progreso.}
+    \caption{Número total de eventos y diferencias porcentuales ($\Delta$) entre eventos simulados del SM y los datos experimentales en las regiones de validación VR1 y VR2. Solo se incluyen incertezas estadísticas y del factor de transferencia $\mu_{t\bar{t}}$. Trabajo en progreso.}
     \label{tbl:ch6:VRs_results}
     \setfloatalignment{b}
 \end{table}
 
 \section{Resultados en la región de validación}
 
-Los resultados obtenidos en las regiones de validación VR1 y VR2 se resumen en la \cref{fig:ch6:VRs_results} y la \cref{tbl:ch6:VRs_results}. Ambas regiones de validación presentan una discrepancia entre el número total de eventos en los datos y en los fondos simulados del SM del 19.92\% y 19.22\% respectivamente, en ambos casos con un defecto de los eventos de MC.
+Los resultados obtenidos en las regiones de validación VR1 y VR2 se resumen en la \cref{fig:ch6:VRs_results} y en la \cref{tbl:ch6:VRs_results}. Ambas regiones de validación presentan una discrepancia entre el número total de eventos en los datos y en los fondos simulados del SM del 19.92\% y 19.22\% respectivamente, en ambos casos con un defecto de los eventos de MC.
 
 A fin de investigar el origen de esta discrepancia, se procedió al análisis de las distribuciones de momento transverso en los leptones, jets y ditaus en las regiones de validación VR1 y VR2, mostradas en las \cref{fig:ch6:VRs_distributions,fig:ch6:VRs_distributions_2}. Se observa una mayor diferencia entre las simulaciones de MC y los datos en los objetos de menor $p_T$. Esto puede deberse a la falta del fondo Multijet, que aun no ha sido incluido en el análisis y suele contribuir a la reconstrucción de leptones \textit{fake} a bajo $p_T$.
 
-Estas diferencias exceden las incertezas estadísticas consideradas en las distribuciones de los procesos simulados. Sin embargo, es importante recordar que no se han considerado en este trabajo las incertezas sistemáticas originadas en la generación de los eventos y en la reconstrucción y calibración de los objetos físicos incluidos en el análisis, ni su posible correlación en las distintas regiones de control y validación. Si suponemos una incerteza sistemática de las simulaciones MC aproximada de $\sigma_b = 20\% \cdot b$, las discrepancias en el número total de eventos resultan inferiores a una desviación estándar en todas las regiones de validación.
+Estas diferencias exceden las incertezas estadísticas consideradas en las distribuciones de los procesos simulados. Sin embargo, es importante recordar que no se han considerado en este trabajo las incertezas sistemáticas originadas en la generación de los eventos y en la reconstrucción y calibración de los objetos físicos incluidos en el análisis, ni su posible correlación en las distintas regiones de control y validación. Si suponemos una incerteza sistemática de las simulaciones MC aproximada de $\sigma_b = 20\% \cdot b$, donde $b$ es el número de eventos de fondo en la región, las discrepancias en el número total de eventos resultan inferiores a una desviación estándar en todas las regiones de validación.
 
 
 

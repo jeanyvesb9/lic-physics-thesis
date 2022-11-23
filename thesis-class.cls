@@ -1491,7 +1491,7 @@
 
 %\setlength{\tabcolsep}{19pt}
 
-% --- Fixed-length tabular column types:a
+% --- Fixed-length tabular column types:
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
@@ -1539,21 +1539,21 @@
   }{}%
 }
 
-\RequirePackage[newfloat]{minted}
-\newminted{c}{mathescape, linenos=true, numberblanklines=false, fontsize=\footnotesize}
-\newminted{sage}{mathescape, linenos=true, numberblanklines=false, fontsize=\footnotesize}
+%\RequirePackage[newfloat]{minted}
+%\newminted{c}{mathescape, linenos=true, numberblanklines=false, fontsize=\footnotesize}
+%\newminted{sage}{mathescape, linenos=true, numberblanklines=false, fontsize=\footnotesize}
 
 
-\newenvironment{clisting}{\captionsetup{type=listing}}{}
-\SetupFloatingEnvironment{listing}{name=Code}
+%\newenvironment{clisting}{\captionsetup{type=listing}}{}
+%\SetupFloatingEnvironment{listing}{name=Code}
 
 % make listings numbers non-copy-able
-\RequirePackage{accsupp}
-\newcommand{\noncopynumber}[1]{%
-    \BeginAccSupp{method=escape,ActualText={}}
-    #1
-    \EndAccSupp{}
-}
+%\RequirePackage{accsupp}
+%\newcommand{\noncopynumber}[1]{%
+%    \BeginAccSupp{method=escape,ActualText={}}
+%    #1
+%    \EndAccSupp{}
+%}
 
 
 %%%=====================================================================================
